@@ -1,7 +1,20 @@
+var keyData = {
+  a: {
+    color: "purple",
+    sound: new Howl({
+      src: ["app/sounds/bubbles.mp3"]
+    })
+  }
+};
+
+var sound2 = new Howl({
+  src: ["app/sounds/clay.mp3"]
+});
+
 var circles = [];
 
 // whenever a key is pressed:
-function onKeyDown() {
+function onKeyDown(e) {
   // get the boundaries of the viewport (points should not exceed these)
   var maxPoint = new Point(view.size.width, view.size.height);
   // get a random point
@@ -11,7 +24,14 @@ function onKeyDown() {
   // make a circle at the random point
   var newCircle = new Path.Circle(new Point(point), 500);
   // fill the circle with orange
-  newCircle.fillColor = "orange";
+
+  // catch undefine colour
+  if (keyData[e.key] == null) {
+    newCircle.fillColor = "orange";
+  } else {
+    newCircle.fillColor = keyData[e.key].color;
+  }
+
   // finally, push it to the array for animation
   circles.push(newCircle);
 }

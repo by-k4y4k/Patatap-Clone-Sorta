@@ -8,5 +8,11 @@ In use:
 - sound files from
   [Neuronal Synchrony](https://github.com/jonobr1/Neuronal-Synchrony).
 - [Paper.js](http://paperjs.org/)
+- [Howler.js](https://howlerjs.com/)
 
-- See [LICENSE.md](the license).
+- See [the license](LICENSE.md).
+
+## TODO:
+
+- CDN howler and paper
+- copy `main_paper.js` into index because of CORS
