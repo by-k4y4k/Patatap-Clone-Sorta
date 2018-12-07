@@ -187,5 +187,12 @@ function onFrame() {
     circles[i].fillColor.hue += 1;
     // every frame, make the circle 90% of its previous size (scale down)
     circles[i].scale(0.85);
+    // if the area of the circle/s is/are less than 1:
+    if (circles[i].area < 1) {
+      // get paper to remove them
+      circles[i].remove();
+      // get JS to remove them from the array
+      circles.splice(i, 1);
+    }
   }
 }
