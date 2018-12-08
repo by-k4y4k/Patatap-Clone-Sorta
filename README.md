@@ -11,8 +11,3 @@ In use:
 - [Howler.js](https://howlerjs.com/)
 
 - See [the license](LICENSE.md).
-
-## TODO:
-
-- CDN howler and paper
-- copy `main_paper.js` into index because of CORS
